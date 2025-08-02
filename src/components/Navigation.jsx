@@ -30,7 +30,7 @@ const Navigation = ({ activeSection, scrollToSection, isDarkTheme }) => {
                 : "from-gray-800 to-gray-900"
             }`}
           >
-            John Doe
+            Abdulrahman Ismael
           </motion.div>
           <div className="hidden md:flex space-x-8">
             {sections.map((section) => (

@@ -135,7 +135,7 @@ const Contact = ({ isDarkTheme }) => {
                         isDarkTheme ? "text-gray-300" : "text-gray-600"
                       }
                     >
-                      john@example.com
+                      abdulrahmanismael992@gmail.com
                     </p>
                   </div>
                 </motion.div>
@@ -299,7 +299,7 @@ const Contact = ({ isDarkTheme }) => {
                   <motion.a
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
-                    href="mailto:john@example.com"
+                    href="mailto:abdulrahmanismael992@gmail.com"
                     className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 shadow-lg ${
                       isDarkTheme
                         ? "bg-gradient-to-br from-gray-700 to-gray-800 border-yellow-500/30 hover:border-yellow-500/60"

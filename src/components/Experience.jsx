@@ -88,10 +88,15 @@ const Experience = ({ isDarkTheme }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.2 }}
               viewport={{ once: true }}
-              className={`p-8 rounded-2xl border shadow-2xl backdrop-blur-sm transition-all duration-300 ${
+              whileHover={{ scale: 1.02 }}
+              className={`p-8 rounded-2xl border shadow-2xl backdrop-blur-sm transition-all duration-300 cursor-[url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${
+                isDarkTheme ? "%23fbbf24" : "%233b82f6"
+              }" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>'),_pointer] hover:cursor-[url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="${
+                isDarkTheme ? "%23f59e0b" : "%232563eb"
+              }" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>'),_pointer] ${
                 isDarkTheme
-                  ? "bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-yellow-500/30 shadow-yellow-500/10"
-                  : "bg-gradient-to-br from-white/90 to-gray-50/90 border-gray-200 shadow-gray-200/50"
+                  ? "bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-yellow-500/30 shadow-yellow-500/10 hover:border-yellow-500/50 hover:shadow-yellow-500/20"
+                  : "bg-gradient-to-br from-white/90 to-gray-50/90 border-gray-200 shadow-gray-200/50 hover:border-blue-300 hover:shadow-blue-200/50"
               }`}
             >
               <div className="flex items-start justify-between mb-6">

@@ -31,7 +31,7 @@ const Footer = ({ isDarkTheme }) => {
               }`}
             />
           </motion.div>
-          <span>by John Doe</span>
+          <span>by Abdulrahman Ismael</span>
         </motion.div>
         <p
           className={`text-sm ${

@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,9 +53,25 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     scroll-behavior: smooth;
+    font-family: "JetBrains Mono", monospace;
+    font-feature-settings: "liga" 1, "calt" 1;
+    font-variation-settings: "wght" 400;
+  }
+
+  /* Modern typography classes */
+  .font-display {
+    font-family: "JetBrains Mono", monospace;
+    font-feature-settings: "liga" 1, "calt" 1;
+    font-variation-settings: "wght" 600;
+  }
+
+  .font-mono {
+    font-family: "JetBrains Mono", monospace;
+    font-feature-settings: "liga" 1, "calt" 1;
   }
 
   /* Custom scrollbar */
@@ -125,6 +143,25 @@
     }
   }
 
+  @keyframes rotate-hex {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes float-hex {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-10px) rotate(180deg);
+    }
+  }
+
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
@@ -136,6 +173,14 @@
   .animate-gradient {
     background-size: 200% 200%;
     animation: gradient-shift 3s ease infinite;
+  }
+
+  .animate-rotate-hex {
+    animation: rotate-hex 20s linear infinite;
+  }
+
+  .animate-float-hex {
+    animation: float-hex 8s ease-in-out infinite;
   }
 
   /* Dark theme animations */
@@ -186,5 +231,58 @@
   .dark .focus-ring:focus {
     outline: none;
     box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.5);
+  }
+
+  /* Custom cursor animations */
+  @keyframes cursor-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes cursor-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes cursor-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-2px);
+    }
+  }
+
+  .cursor-pulse {
+    animation: cursor-pulse 2s ease-in-out infinite;
+  }
+
+  .cursor-rotate {
+    animation: cursor-rotate 3s linear infinite;
+  }
+
+  .cursor-bounce {
+    animation: cursor-bounce 1s ease-in-out infinite;
+  }
+
+  /* Interactive element hover effects */
+  .interactive {
+    transition: all 0.3s ease;
+  }
+
+  .interactive:hover {
+    transform: scale(1.02);
   }
 }
