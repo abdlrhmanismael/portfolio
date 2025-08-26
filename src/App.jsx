@@ -70,7 +70,7 @@ const App = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={toggleTheme}
-        className={`fixed top-20 right-6 z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
+        className={`fixed top-20 -right-2 z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
           isDarkTheme
             ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black"
             : "bg-gradient-to-r from-gray-800 to-gray-900 text-white"
