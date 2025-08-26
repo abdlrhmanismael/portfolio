@@ -21,15 +21,7 @@ const Projects = ({ isDarkTheme }) => {
       liveUrl: "#",
       githubUrl: "#",
     },
-    {
-      title: "Portfolio Website",
-      description:
-        "A modern, responsive portfolio website with smooth animations, dark/light theme toggle, and optimized performance.",
-      image: "🎨",
-      tech: ["React", "TailwindCSS", "Framer Motion", "Vite"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
+
     {
       title: "Weather Dashboard",
       description:
@@ -45,15 +37,6 @@ const Projects = ({ isDarkTheme }) => {
         "Real-time chat application with message encryption, file sharing, and group chat functionality.",
       image: "💬",
       tech: ["React", "Socket.io", "Express", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Fitness Tracker",
-      description:
-        "A comprehensive fitness tracking app with workout planning, progress analytics, and social features.",
-      image: "💪",
-      tech: ["React Native", "Firebase", "Redux", "Charts"],
       liveUrl: "#",
       githubUrl: "#",
     },

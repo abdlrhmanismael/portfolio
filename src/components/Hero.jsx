@@ -42,7 +42,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
   return (
     <section
       id="home"
-      className={`min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-300 ${
+      className={`min-h-screen flex items-center justify-center relative overflow-hidden transition-colors duration-300 pt-16 sm:pt-20 lg:pt-24 ${
         isDarkTheme
           ? "bg-gradient-to-br from-black via-gray-900 via-gray-800 to-black"
           : "bg-gradient-to-br from-blue-50 via-white to-purple-50"
@@ -86,21 +86,21 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
       <motion.div
         animate={{ rotate: 360, scale: [1, 1.1, 1] }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className={`absolute top-20 left-20 w-32 h-32 border rounded-full opacity-20 ${
+        className={`absolute top-8 sm:top-20 left-8 sm:left-20 w-16 h-16 sm:w-32 sm:h-32 border rounded-full opacity-20 ${
           isDarkTheme ? "border-yellow-500/20" : "border-blue-500/20"
         }`}
       />
       <motion.div
         animate={{ rotate: -360, scale: [1, 0.9, 1] }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className={`absolute top-40 right-20 w-24 h-24 border rounded-full opacity-15 ${
+        className={`absolute top-16 sm:top-40 right-8 sm:right-20 w-12 h-12 sm:w-24 sm:h-24 border rounded-full opacity-15 ${
           isDarkTheme ? "border-amber-500/20" : "border-purple-500/20"
         }`}
       />
       <motion.div
         animate={{ rotate: 180, scale: [1, 1.2, 1] }}
         transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        className={`absolute bottom-20 left-1/4 w-20 h-20 border rounded-full opacity-10 ${
+        className={`absolute bottom-8 sm:bottom-20 left-1/4 w-10 h-10 sm:w-20 sm:h-20 border rounded-full opacity-10 ${
           isDarkTheme ? "border-yellow-400/20" : "border-blue-400/20"
         }`}
       />
@@ -308,7 +308,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
                     <motion.a
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      href="https://linkedin.com"
+                      href="https://www.linkedin.com/in/abdlrhmanismael"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 shadow-lg ${
@@ -326,7 +326,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
                     <motion.a
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      href="https://github.com"
+                      href="https://github.com/abdlrhmanismael"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 shadow-lg ${
@@ -369,7 +369,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
       <motion.div
         animate={{ y: [0, -20, 0], opacity: [0.5, 0.8, 0.5] }}
         transition={{ duration: 3, repeat: Infinity }}
-        className={`absolute top-20 left-10 w-4 h-4 rounded-full opacity-50 shadow-lg ${
+        className={`absolute top-8 sm:top-20 left-4 sm:left-10 w-3 h-3 sm:w-4 sm:h-4 rounded-full opacity-50 shadow-lg ${
           isDarkTheme
             ? "bg-yellow-500 shadow-yellow-500/50"
             : "bg-blue-500 shadow-blue-500/50"
@@ -378,7 +378,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
       <motion.div
         animate={{ y: [0, 20, 0], opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 4, repeat: Infinity }}
-        className={`absolute top-40 right-20 w-6 h-6 rounded-full opacity-30 shadow-lg ${
+        className={`absolute top-16 sm:top-40 right-8 sm:right-20 w-4 h-4 sm:w-6 sm:h-6 rounded-full opacity-30 shadow-lg ${
           isDarkTheme
             ? "bg-amber-500 shadow-amber-500/50"
             : "bg-purple-500 shadow-purple-500/50"
@@ -387,7 +387,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
       <motion.div
         animate={{ rotate: 360, scale: [1, 1.2, 1] }}
         transition={{ duration: 20, repeat: Infinity }}
-        className={`absolute bottom-20 left-20 w-8 h-8 border rounded-full opacity-30 shadow-lg ${
+        className={`absolute bottom-8 sm:bottom-20 left-8 sm:left-20 w-6 h-6 sm:w-8 sm:h-8 border rounded-full opacity-30 shadow-lg ${
           isDarkTheme
             ? "border-yellow-500 shadow-yellow-500/30"
             : "border-blue-500 shadow-blue-500/30"

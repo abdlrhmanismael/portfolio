@@ -4,45 +4,19 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 const Experience = ({ isDarkTheme }) => {
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      period: "2022 - Present",
-      location: "San Francisco, CA",
+      title: "Front-end Developer",
+      company: "Masa International Group",
+      period: "July 2024 - Current",
+      location: "Malaysia",
       description:
-        "Leading frontend development for enterprise applications, mentoring junior developers, and implementing best practices for scalable React applications.",
+        "Establishing software products using latest technologies and frameworks, focusing on modern frontend.",
       achievements: [
-        "Led development of 3 major web applications serving 100K+ users",
-        "Improved application performance by 40% through code optimization",
-        "Mentored 5 junior developers and conducted 50+ code reviews",
-        "Implemented CI/CD pipelines reducing deployment time by 60%",
-      ],
-    },
-    {
-      title: "Frontend Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
-      location: "New York, NY",
-      description:
-        "Developed responsive web applications using React and TypeScript, collaborated with design and backend teams to deliver high-quality products.",
-      achievements: [
-        "Built 10+ responsive web applications with React and TypeScript",
-        "Collaborated with UX designers to implement pixel-perfect designs",
-        "Reduced bundle size by 30% through code splitting and optimization",
-        "Participated in agile development with 2-week sprint cycles",
-      ],
-    },
-    {
-      title: "Junior Developer",
-      company: "StartupHub",
-      period: "2019 - 2020",
-      location: "Austin, TX",
-      description:
-        "Started career in web development, learned modern frameworks and best practices while contributing to various client projects.",
-      achievements: [
-        "Developed 5 client websites using HTML, CSS, and JavaScript",
-        "Learned React and modern frontend development practices",
-        "Contributed to open-source projects and community events",
-        "Completed 3 professional certifications in web development",
+        "Developing scalable web applications using Nuxt.js Vue.js And Next",
+        "Implementing responsive designs with modern CSS frameworks",
+        "Collaborating with cross-functional teams to deliver high-quality products",
+        "Optimizing application performance and user experience",
+        "Working with latest frontend technologies and best practices",
+        "Contributing to software architecture and technical decisions",
       ],
     },
   ];
