@@ -145,7 +145,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-5xl md:text-7xl font-bold mb-6"
+              className="text-3xl md:text-4xl font-bold mb-6"
             >
               <span
                 className={`bg-gradient-to-r bg-clip-text text-transparent ${
@@ -161,7 +161,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className={`text-2xl md:text-3xl mb-8 ${
+              className={`text-2xl md:text-2xl mb-8 ${
                 isDarkTheme ? "text-gray-300" : "text-gray-600"
               }`}
             >
