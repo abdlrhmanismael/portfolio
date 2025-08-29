@@ -65,9 +65,9 @@ const Contact = ({ isDarkTheme }) => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
+        <div className="grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12">
           {/* Contact Information */}
-          <div className="lg:col-span-1 order-2 lg:order-1">
+          <div className="lg:col-span-6 order-2 lg:order-1">
             <div
               className={`p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border shadow-xl sm:shadow-2xl backdrop-blur-sm transition-all duration-300 ${
                 isDarkTheme
@@ -295,7 +295,7 @@ const Contact = ({ isDarkTheme }) => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 order-1 lg:order-2">
+          <div className="lg:col-span-6 order-1 lg:order-2">
             <div
               className={`p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border shadow-xl sm:shadow-2xl backdrop-blur-sm transition-all duration-300 ${
                 isDarkTheme

@@ -177,7 +177,7 @@ const Navigation = ({ activeSection, scrollToSection, isDarkTheme }) => {
               </div>
 
               {/* Menu Items */}
-              <div className="flex-1 flex flex-col justify-center px-6 py-8">
+              <div className="flex-1 flex flex-col px-6 py-8">
                 <div className="space-y-4">
                   {sections.map((section, index) => (
                     <motion.button

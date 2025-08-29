@@ -185,7 +185,10 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
               transition={{ delay: 1 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center"
             >
-              <motion.button
+              <motion.a
+                href="https://drive.google.com/file/d/12B82VDC9aHtN7jmMmlweHeETnUxQlPey/view?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-8 py-3 rounded-full font-semibold flex items-center gap-2 transition-all duration-300 shadow-lg ${
@@ -196,7 +199,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
               >
                 <Download className="w-5 h-5" />
                 Download Resume
-              </motion.button>
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

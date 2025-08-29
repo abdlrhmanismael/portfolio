@@ -1,44 +1,54 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  ShoppingCart,
+  Split,
+  Package,
+  MessageSquare,
+  Receipt,
+  LayoutDashboard,
+} from "lucide-react";
 
 const Projects = ({ isDarkTheme }) => {
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "International E-Commerce Platform ",
       description:
-        "A full-stack e-commerce platform built with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-      image: "🛒",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#",
-    },
-    {
-      title: "Task Management App",
-      description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image: "📋",
-      tech: ["React", "TypeScript", "Socket.io", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A global e-commerce website built with Nuxt.js that supports multiple languages and currencies. The platform follows a headless CMS architecture, enabling easy management of products, categories, banners, and static content through an intuitive admin interface. This decoupled approach ensures flexibility for content updates, localized campaigns, and region-specific shopping experiences.",
+      image: <ShoppingCart className="w-16 h-16 mx-auto" />,
+      tech: ["Nuxt.js", "TypeScript", "Bootstrap"],
+      liveUrl: "https://testwebsite.masainternationalgroup.com/en/",
+      githubUrl: "",
     },
 
     {
-      title: "Weather Dashboard",
+      title: "Order Splitter — Web Application for Bill Sharing",
       description:
-        "A weather application with location-based forecasts, interactive maps, and detailed weather analytics.",
-      image: "🌤️",
-      tech: ["React", "OpenWeather API", "Chart.js", "Geolocation"],
-      liveUrl: "#",
-      githubUrl: "#",
+        "A web application designed to split and calculate orders among friends, including taxes, service fees, and delivery charges, ensuring fair distribution of costs.",
+      image: <Receipt className="w-16 h-16 mx-auto" />,
+      tech: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+      liveUrl: "https://split-check-frontend.onrender.com/",
+      githubUrl: "https://github.com/abdlrhmanismael/split-check-frontend",
+    },
+
+    {
+      title: "Juned Masa Trading — Import & Distribution Platform",
+      description:
+        "A responsive, bilingual website for a Syrian import and distribution company. Showcases Double A paper and ARISUN tires, with sections for services, articles, company profile, and contact. Focused on brand trust, product quality, and customer guidance.",
+      image: <Package className="w-16 h-16 mx-auto" />,
+      tech: ["Nutt.js", "TypeScript", "Bootstrap"],
+      liveUrl: "https://junedmasa.com/en/",
+      githubUrl: "",
     },
     {
-      title: "Chat Application",
+      title: "Dashboard Of International E-Commerce",
       description:
-        "Real-time chat application with message encryption, file sharing, and group chat functionality.",
-      image: "💬",
+        "A global Nuxt.js-based marketplace supporting multiple languages and currencies. Powered by a headless CMS, it enables easy product management, dynamic content updates, and localized shopping experiences for different region",
+      image: <LayoutDashboard className="w-16 h-16 mx-auto" />,
       tech: ["React", "Socket.io", "Express", "MongoDB"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://testcp.masainternationalgroup.com/login",
+      githubUrl: "",
     },
   ];
 
@@ -90,8 +100,8 @@ const Projects = ({ isDarkTheme }) => {
                   : "bg-gradient-to-br from-white/90 to-gray-50/90 border-gray-200 shadow-gray-200/50"
               }`}
             >
-              <div className="p-6">
-                <div className="text-6xl mb-4 text-center">{project.image}</div>
+              <div className="p-6 h-full flex flex-col">
+                <div className="flex justify-center mb-4">{project.image}</div>
                 <h3
                   className={`text-xl font-semibold mb-3 ${
                     isDarkTheme ? "text-white" : "text-gray-900"
@@ -120,7 +130,8 @@ const Projects = ({ isDarkTheme }) => {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-3">
+                <div className="mt-auto pt-4">
+                  <div className="flex gap-3">
                   <motion.a
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -136,21 +147,33 @@ const Projects = ({ isDarkTheme }) => {
                     <ExternalLink className="w-4 h-4 inline mr-2" />
                     Live Demo
                   </motion.a>
-                  <motion.a
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex-1 py-2 px-4 rounded-lg font-medium text-center border transition-all duration-300 ${
-                      isDarkTheme
-                        ? "border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/10"
-                        : "border-blue-500/30 text-blue-600 hover:bg-blue-500/10"
-                    }`}
-                  >
-                    <Github className="w-4 h-4 inline mr-2" />
-                    Code
-                  </motion.a>
+                  {project.githubUrl ? (
+                    <motion.a
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center px-4 py-2 rounded-lg transition-colors ${
+                        isDarkTheme
+                          ? "text-white hover:bg-gray-700"
+                          : "text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      <Github className="w-5 h-5 mr-2" />
+                      Code
+                    </motion.a>
+                  ) : (
+                    <span
+                      className={`inline-flex items-center px-4 py-2 rounded-lg ${
+                        isDarkTheme ? "text-gray-400" : "text-gray-500"
+                      }`}
+                    >
+                      <Github className="w-5 h-5 mr-2" />
+                      private
+                    </span>
+                  )}
+                  </div>
                 </div>
               </div>
             </motion.div>
