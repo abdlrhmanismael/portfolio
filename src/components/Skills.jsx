@@ -368,33 +368,6 @@ const Skills = ({ isDarkTheme }) => {
             )}
           </div>
         </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <p
-            className={`text-lg mb-6 ${
-              isDarkTheme ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
-            Always learning and exploring new technologies
-          </p>
-          <div
-            className={`inline-flex items-center space-x-2 px-6 py-3 rounded-full border-2 transition-all duration-300 ${
-              isDarkTheme
-                ? "border-yellow-500/30 text-yellow-400 hover:border-yellow-500/60 hover:bg-yellow-500/10"
-                : "border-blue-500/30 text-blue-600 hover:border-blue-500/60 hover:bg-blue-500/10"
-            }`}
-          >
-            <span className="text-2xl">🚀</span>
-            <span className="font-semibold">Ready for new challenges</span>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
