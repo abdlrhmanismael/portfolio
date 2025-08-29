@@ -14,8 +14,6 @@ import {
 } from "lucide-react";
 
 const Skills = ({ isDarkTheme }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-
   const skillCategories = [
     {
       category: "Frontend Development",
@@ -274,7 +272,7 @@ const Skills = ({ isDarkTheme }) => {
           : "bg-gradient-to-br from-gray-50 via-white to-gray-100"
       }`}
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -283,14 +281,22 @@ const Skills = ({ isDarkTheme }) => {
           className="text-center mb-16"
         >
           <h2
-            className={`text-4xl font-bold mb-4 ${
+            className={`text-5xl font-bold mb-6 ${
               isDarkTheme ? "text-white" : "text-gray-900"
             }`}
           >
             Skills & Technologies
           </h2>
+          <p
+            className={`text-xl mb-8 max-w-3xl mx-auto ${
+              isDarkTheme ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            A comprehensive collection of technologies and tools I use to bring
+            ideas to life
+          </p>
           <div
-            className={`w-24 h-1 mx-auto mb-6 rounded-full ${
+            className={`w-32 h-1 mx-auto mb-8 rounded-full ${
               isDarkTheme
                 ? "bg-gradient-to-r from-yellow-500 to-amber-500"
                 : "bg-gradient-to-r from-blue-500 to-purple-600"
@@ -298,141 +304,97 @@ const Skills = ({ isDarkTheme }) => {
           ></div>
         </motion.div>
 
-        {/* Carousel Container */}
-        <div className="relative overflow-hidden">
-          <motion.div
-            className="flex transition-transform duration-500 ease-in-out"
-            style={{
-              transform: `translateX(-${currentSlide * 100}%)`,
-            }}
-          >
-            {skillCategories.map((category, categoryIndex) => (
-              <div
-                key={category.category}
-                className="w-full flex-shrink-0 px-4"
-              >
+        {/* All Skills Grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className={`p-8 rounded-3xl border shadow-2xl backdrop-blur-sm transition-all duration-300 ${
+            isDarkTheme
+              ? "bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-yellow-500/30 shadow-yellow-500/10"
+              : "bg-gradient-to-br from-white/90 to-gray-50/90 border-gray-200 shadow-gray-200/50"
+          }`}
+        >
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6">
+            {skillCategories.flatMap((category, categoryIndex) =>
+              category.skills.map((skill, skillIndex) => (
                 <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: categoryIndex * 0.2 }}
+                  key={`${category.category}-${skill.name}`}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{
+                    duration: 0.6,
+                    delay:
+                      (categoryIndex * category.skills.length + skillIndex) *
+                      0.05,
+                  }}
                   viewport={{ once: true }}
-                  className={`p-8 rounded-2xl border shadow-2xl backdrop-blur-sm transition-all duration-300 ${
+                  whileHover={{
+                    scale: 1.08,
+                    y: -8,
+                    transition: { duration: 0.3 },
+                  }}
+                  className={`p-6 rounded-2xl border transition-all duration-500 group cursor-pointer ${
                     isDarkTheme
-                      ? "bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-yellow-500/30 shadow-yellow-500/10"
-                      : "bg-gradient-to-br from-white/90 to-gray-50/90 border-gray-200 shadow-gray-200/50"
+                      ? "bg-gradient-to-br from-gray-700/50 to-gray-800/50 border-yellow-500/20 hover:border-yellow-500/40 hover:shadow-2xl hover:shadow-yellow-500/20"
+                      : "bg-gradient-to-br from-gray-50/50 to-white/50 border-gray-200 hover:border-blue-300 hover:shadow-2xl hover:shadow-blue-500/20"
                   }`}
                 >
-                  <h3
-                    className={`text-3xl font-semibold mb-8 text-center ${
-                      isDarkTheme ? "text-yellow-400" : "text-blue-600"
-                    }`}
-                  >
-                    {category.category}
-                  </h3>
-                  <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-                    {category.skills.map((skill, skillIndex) => (
-                      <motion.div
-                        key={skill.name}
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{
-                          duration: 0.5,
-                          delay: skillIndex * 0.1,
-                        }}
-                        viewport={{ once: true }}
-                        whileHover={{ scale: 1.05 }}
-                        className={`p-6 rounded-xl border transition-all duration-300 group ${
-                          isDarkTheme
-                            ? "bg-gradient-to-br from-gray-700/50 to-gray-800/50 border-yellow-500/20 hover:border-yellow-500/40"
-                            : "bg-gradient-to-br from-gray-50/50 to-white/50 border-gray-200 hover:border-blue-300"
-                        }`}
-                      >
-                        <div className="text-center">
-                          <div
-                            className="mb-3 group-hover:scale-110 transition-transform duration-300 flex justify-center"
-                            style={{ color: skill.color }}
-                          >
-                            {skill.icon}
-                          </div>
-                          <h4
-                            className={`text-lg font-semibold ${
-                              isDarkTheme ? "text-white" : "text-gray-900"
-                            }`}
-                          >
-                            {skill.name}
-                          </h4>
-                        </div>
-                      </motion.div>
-                    ))}
+                  <div className="text-center">
+                    <div
+                      className="mb-3 group-hover:scale-125 transition-transform duration-500 flex justify-center"
+                      style={{ color: skill.color }}
+                    >
+                      {skill.icon}
+                    </div>
+                    <h4
+                      className={`text-base sm:text-lg font-bold group-hover:scale-110 transition-transform duration-300 ${
+                        isDarkTheme ? "text-white" : "text-gray-900"
+                      }`}
+                    >
+                      {skill.name}
+                    </h4>
+                    <div
+                      className={`mt-2 w-10 h-1 mx-auto rounded-full transition-all duration-300 group-hover:w-14 ${
+                        isDarkTheme
+                          ? "bg-gradient-to-r from-yellow-500 to-amber-500"
+                          : "bg-gradient-to-r from-blue-500 to-purple-600"
+                      }`}
+                    ></div>
                   </div>
                 </motion.div>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Carousel Navigation */}
-          <div className="flex justify-center mt-8 space-x-3">
-            {skillCategories.map((_, index) => (
-              <motion.button
-                key={index}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.9 }}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  currentSlide === index
-                    ? isDarkTheme
-                      ? "bg-gradient-to-r from-yellow-500 to-amber-500"
-                      : "bg-gradient-to-r from-blue-500 to-purple-600"
-                    : isDarkTheme
-                    ? "bg-gray-600 hover:bg-gray-500"
-                    : "bg-gray-400 hover:bg-gray-500"
-                }`}
-              />
-            ))}
+              ))
+            )}
           </div>
+        </motion.div>
 
-          {/* Navigation Arrows */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() =>
-              setCurrentSlide(
-                currentSlide === 0
-                  ? skillCategories.length - 1
-                  : currentSlide - 1
-              )
-            }
-            className={`absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full border flex items-center justify-center transition-colors shadow-lg ${
-              isDarkTheme
-                ? "bg-gradient-to-r from-gray-800/90 to-gray-900/90 border-yellow-500/30 text-yellow-400 hover:text-yellow-300"
-                : "bg-gradient-to-r from-white/90 to-gray-50/90 border-gray-300 text-blue-600 hover:text-blue-500"
-            }`}
-          >
-            ←
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() =>
-              setCurrentSlide((currentSlide + 1) % skillCategories.length)
-            }
-            className={`absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 rounded-full border flex items-center justify-center transition-colors shadow-lg ${
-              isDarkTheme
-                ? "bg-gradient-to-r from-gray-800/90 to-gray-900/90 border-yellow-500/30 text-yellow-400 hover:text-yellow-300"
-                : "bg-gradient-to-r from-white/90 to-gray-50/90 border-gray-300 text-blue-600 hover:text-blue-500"
-            }`}
-          >
-            →
-          </motion.button>
-        </div>
-
-        {/* Auto-play indicator */}
+        {/* Bottom CTA */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-          className="text-center mt-6"
-        ></motion.div>
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <p
+            className={`text-lg mb-6 ${
+              isDarkTheme ? "text-gray-300" : "text-gray-600"
+            }`}
+          >
+            Always learning and exploring new technologies
+          </p>
+          <div
+            className={`inline-flex items-center space-x-2 px-6 py-3 rounded-full border-2 transition-all duration-300 ${
+              isDarkTheme
+                ? "border-yellow-500/30 text-yellow-400 hover:border-yellow-500/60 hover:bg-yellow-500/10"
+                : "border-blue-500/30 text-blue-600 hover:border-blue-500/60 hover:bg-blue-500/10"
+            }`}
+          >
+            <span className="text-2xl">🚀</span>
+            <span className="font-semibold">Ready for new challenges</span>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

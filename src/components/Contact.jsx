@@ -92,8 +92,9 @@ const Contact = ({ isDarkTheme }) => {
               </p>
 
               <div className="space-y-4 sm:space-y-6">
-                <div
-                  className={`flex items-center p-3 sm:p-4 rounded-lg sm:rounded-xl border transition-all duration-300 ${
+                <a
+                  href="mailto:abdulrahmanismael992@gmail.com"
+                  className={`flex items-center p-3 sm:p-4 rounded-lg sm:rounded-xl border transition-all duration-300 hover:scale-105 cursor-pointer ${
                     isDarkTheme
                       ? "bg-gradient-to-br from-gray-700/50 to-gray-800/50 border-yellow-500/20 hover:border-yellow-500/40"
                       : "bg-gradient-to-br from-gray-50/50 to-white/50 border-gray-200 hover:border-blue-300"
@@ -124,10 +125,11 @@ const Contact = ({ isDarkTheme }) => {
                       abdulrahmanismael992@gmail.com
                     </p>
                   </div>
-                </div>
+                </a>
 
-                <div
-                  className={`flex items-center p-3 sm:p-4 rounded-lg sm:rounded-xl border transition-all duration-300 ${
+                <a
+                  href="tel:+201069422092"
+                  className={`flex items-center p-3 sm:p-4 rounded-lg sm:rounded-xl border transition-all duration-300 hover:scale-105 cursor-pointer ${
                     isDarkTheme
                       ? "bg-gradient-to-br from-gray-700/50 to-gray-800/50 border-yellow-500/20 hover:border-yellow-500/40"
                       : "bg-gradient-to-br from-gray-50/50 to-white/50 border-gray-200 hover:border-blue-300"
@@ -158,7 +160,7 @@ const Contact = ({ isDarkTheme }) => {
                       +201069422092
                     </p>
                   </div>
-                </div>
+                </a>
 
                 <div
                   className={`flex items-center p-3 sm:p-4 rounded-lg sm:rounded-xl border transition-all duration-300 ${

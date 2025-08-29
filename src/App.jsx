@@ -70,16 +70,19 @@ const App = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={toggleTheme}
-        className={`fixed top-20 -right-2 z-50 p-3 rounded-full shadow-lg transition-all duration-300 ${
-          isDarkTheme
-            ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black"
-            : "bg-gradient-to-r from-gray-800 to-gray-900 text-white"
-        }`}
+        className={`fixed z-50 rounded-full shadow-xl transition-all duration-300 
+          p-2 sm:p-3 md:p-4 
+          bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 
+          ${
+            isDarkTheme
+              ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black hover:shadow-yellow-500/25"
+              : "bg-gradient-to-r from-gray-800 to-gray-900 text-white hover:shadow-gray-800/25"
+          }`}
       >
         {isDarkTheme ? (
-          <Sun className="w-5 h-5" />
+          <Sun className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         ) : (
-          <Moon className="w-5 h-5" />
+          <Moon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
         )}
       </motion.button>
 

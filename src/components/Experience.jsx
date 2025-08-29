@@ -73,7 +73,7 @@ const Experience = ({ isDarkTheme }) => {
                   : "bg-gradient-to-br from-white/90 to-gray-50/90 border-gray-200 shadow-gray-200/50 hover:border-blue-300 hover:shadow-blue-200/50"
               }`}
             >
-              <div className="flex items-start justify-between mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 sm:gap-6 mb-6">
                 <div className="flex items-center gap-4">
                   <div
                     className={`w-12 h-12 rounded-full flex items-center justify-center ${
@@ -101,13 +101,13 @@ const Experience = ({ isDarkTheme }) => {
                     </p>
                   </div>
                 </div>
-                <div className="text-right">
+                <div className="flex flex-col sm:text-right gap-2">
                   <div
-                    className={`flex items-center gap-2 mb-1 ${
+                    className={`flex items-center gap-2 ${
                       isDarkTheme ? "text-gray-300" : "text-gray-600"
                     }`}
                   >
-                    <Calendar className="w-4 h-4" />
+                    <Calendar className="w-4 h-4 flex-shrink-0" />
                     <span className="text-sm">{experience.period}</span>
                   </div>
                   <div
@@ -115,7 +115,7 @@ const Experience = ({ isDarkTheme }) => {
                       isDarkTheme ? "text-gray-400" : "text-gray-500"
                     }`}
                   >
-                    <MapPin className="w-4 h-4" />
+                    <MapPin className="w-4 h-4 flex-shrink-0" />
                     <span className="text-sm">{experience.location}</span>
                   </div>
                 </div>
