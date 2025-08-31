@@ -7,7 +7,7 @@ const Experience = ({ isDarkTheme }) => {
       title: "Front-end Developer",
       company: "Masa International Group",
       period: "July 2024 - Current",
-      location: "Malaysia",
+      location: "Thailand",
       description:
         "Establishing software products using latest technologies and frameworks, focusing on modern frontend.",
       achievements: [

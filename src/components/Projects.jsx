@@ -47,7 +47,7 @@ const Projects = ({ isDarkTheme }) => {
         "A global Nuxt.js-based marketplace supporting multiple languages and currencies. Powered by a headless CMS, it enables easy product management, dynamic content updates, and localized shopping experiences for different region",
       image: <LayoutDashboard className="w-16 h-16 mx-auto" />,
       tech: ["Nuxt.js", "TypeScript", "Bootstrap"],
-      liveUrl: "https://testcp.masainternationalgroup.com/login",
+      liveUrl: "",
       githubUrl: "",
     },
   ];
@@ -132,21 +132,34 @@ const Projects = ({ isDarkTheme }) => {
                 </div>
                 <div className="mt-auto pt-4">
                   <div className="flex gap-3">
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`flex-1 py-2 px-4 rounded-lg font-medium text-center transition-all duration-300 ${
-                        isDarkTheme
-                          ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black hover:from-yellow-600 hover:to-amber-700"
-                          : "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700"
-                      }`}
-                    >
-                      <ExternalLink className="w-4 h-4 inline mr-2" />
-                      Live Demo
-                    </motion.a>
+                    {project.liveUrl || project.githubUrl ? (
+                      <motion.a
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        href={project.liveUrl || project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`flex-1 py-2 px-4 rounded-lg font-medium text-center transition-all duration-300 ${
+                          isDarkTheme
+                            ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black hover:from-yellow-600 hover:to-amber-700"
+                            : "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700"
+                        }`}
+                      >
+                        <ExternalLink className="w-4 h-4 inline mr-2" />
+                        {project.liveUrl ? "Live Demo" : "View Code"}
+                      </motion.a>
+                    ) : (
+                      <span
+                        className={`flex-1 py-2 px-4 rounded-lg font-medium text-center ${
+                          isDarkTheme
+                            ? "bg-gray-700 text-gray-300"
+                            : "bg-gray-200 text-gray-500"
+                        }`}
+                      >
+                        <ExternalLink className="w-4 h-4 inline mr-2" />
+                        Private
+                      </span>
+                    )}
                     {project.githubUrl ? (
                       <motion.a
                         whileHover={{ scale: 1.05 }}
