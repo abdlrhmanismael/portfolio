@@ -62,10 +62,10 @@ const About = ({ isDarkTheme }) => {
                 isDarkTheme ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              I'm a passionate Frontend Developer with over 1 year of experience
-              crafting exceptional digital experiences. I specialize in modern
-              web technologies and love turning complex problems into simple,
-              beautiful solutions.
+              I'm a passionate Frontend Developer with over 2 years of
+              experience crafting exceptional digital experiences. I specialize
+              in modern web technologies and love turning complex problems into
+              simple, beautiful solutions.
             </p>
             <p
               className={`mb-6 ${

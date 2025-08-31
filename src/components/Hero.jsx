@@ -282,7 +282,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
                     >
                       Frontend Developer
                     </span>{" "}
-                    with over 1 year of experience crafting exceptional digital
+                    with over 2 years of experience crafting exceptional digital
                     experiences. I specialize in modern web technologies and
                     love turning complex problems into simple, beautiful
                     solutions.
