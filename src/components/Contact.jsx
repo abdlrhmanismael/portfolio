@@ -93,7 +93,7 @@ const Contact = ({ isDarkTheme }) => {
 
               <div className="space-y-4 sm:space-y-6">
                 <a
-                  href="mailto:abdulrahmanismael992@gmail.com"
+                  href="mailto:contact@abdulrahmanismael.com"
                   className={`flex items-center p-3 sm:p-4 rounded-lg sm:rounded-xl border transition-all duration-300 hover:scale-105 cursor-pointer ${
                     isDarkTheme
                       ? "bg-gradient-to-br from-gray-700/50 to-gray-800/50 border-yellow-500/20 hover:border-yellow-500/40"
@@ -122,7 +122,7 @@ const Contact = ({ isDarkTheme }) => {
                         isDarkTheme ? "text-gray-300" : "text-gray-600"
                       }`}
                     >
-                      abdulrahmanismael992@gmail.com
+                      contact@abdulrahmanismael.com
                     </p>
                   </div>
                 </a>
@@ -278,7 +278,7 @@ const Contact = ({ isDarkTheme }) => {
                     />
                   </a>
                   <a
-                    href="mailto:abdulrahmanismael992@gmail.com"
+                    href="mailto:contact@abdulrahmanismael.com"
                     className={`w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center border transition-all duration-300 shadow-lg ${
                       isDarkTheme
                         ? "bg-gradient-to-br from-gray-700 to-gray-800 border-yellow-500/30 hover:border-yellow-500/60"

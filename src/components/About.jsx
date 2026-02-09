@@ -116,7 +116,7 @@ const About = ({ isDarkTheme }) => {
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="mailto:abdulrahmanismael992@gmail.com"
+                href="mailto:contact@abdulrahmanismael.com"
                 className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300 shadow-lg interactive ${
                   isDarkTheme
                     ? "bg-gradient-to-br from-gray-700 to-gray-800 border-yellow-500/30 hover:border-yellow-500/60"

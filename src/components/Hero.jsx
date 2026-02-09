@@ -347,7 +347,7 @@ const Hero = ({ scrollToSection, isDarkTheme }) => {
                     <motion.a
                       whileHover={{ scale: 1.1, y: -2 }}
                       whileTap={{ scale: 0.95 }}
-                      href="mailto:abdulrahmanismael992@gmail.com"
+                      href="mailto:contact@abdulrahmanismael.com"
                       className={`w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 shadow-lg ${
                         isDarkTheme
                           ? "bg-gradient-to-br from-gray-700 to-gray-800 border-yellow-500/40 hover:border-yellow-500/80 hover:shadow-yellow-500/25"

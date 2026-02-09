@@ -16,39 +16,55 @@ const Projects = ({ isDarkTheme }) => {
       title: "International E-Commerce Platform ",
       description:
         "A global e-commerce website built with Nuxt.js that supports multiple languages and currencies. The platform follows a headless CMS architecture, enabling easy management of products, categories, banners, and static content through an intuitive admin interface. This decoupled approach ensures flexibility for content updates, localized campaigns, and region-specific shopping experiences.",
-      image: <ShoppingCart className="w-16 h-16 mx-auto" />,
-      tech: ["Nuxt.js", "TypeScript", "Bootstrap"],
-      liveUrl: "https://testwebsite.masainternationalgroup.com/en/",
+      image: "https://i.postimg.cc/cL7DqBXq/Whats-App-Image-2026-02-09-at-5-24-59-AM.jpg", // Replace with actual project image
+      tech: ["Next.js", "TypeScript", "Tailwind" ,'Shadcn'],
+      liveUrl: "https://testwebsite.dawatoora.com/en/",
       githubUrl: "",
+      stats: {
+        value: "60+",
+        label: "Countries Supported"
+      }
     },
 
     {
       title: "Order Splitter — Web Application for Bill Sharing",
       description:
         "A web application designed to split and calculate orders among friends, including taxes, service fees, and delivery charges, ensuring fair distribution of costs.",
-      image: <Receipt className="w-16 h-16 mx-auto" />,
+      image: "https://i.postimg.cc/QCWbfQFh/Whats-App-Image-2026-02-09-at-5-25-52-AM.jpg", // Replace with actual project image
       tech: ["React", "TypeScript", "Tailwind CSS", "shadcn/ui"],
       liveUrl: "https://split-check-frontend.onrender.com/",
       githubUrl: "https://github.com/abdlrhmanismael/split-check-frontend",
+      stats: {
+        value: "1K+",
+        label: "Active Users"
+      }
     },
 
     {
       title: "Juned Masa Trading — Import & Distribution Platform",
       description:
         "A responsive, bilingual website for a Syrian import and distribution company. Showcases Double A paper and ARISUN tires, with sections for services, articles, company profile, and contact. Focused on brand trust, product quality, and customer guidance.",
-      image: <Package className="w-16 h-16 mx-auto" />,
-      tech: ["Nuxt.js", "TypeScript", "Bootstrap"],
+      image: "https://i.postimg.cc/PxC9k8C1/Whats-App-Image-2026-02-09-at-5-27-19-AM.jpg", // Replace with actual project image
+      tech: ["Next.js", "TypeScript", "Tailwind" ,'Shadcn'],
       liveUrl: "https://junedmasa.com/en/",
       githubUrl: "",
+      stats: {
+        value: "50+",
+        label: "Products Listed"
+      }
     },
     {
       title: "Dashboard Of International E-Commerce",
       description:
         "A global Nuxt.js-based marketplace supporting multiple languages and currencies. Powered by a headless CMS, it enables easy product management, dynamic content updates, and localized shopping experiences for different region",
-      image: <LayoutDashboard className="w-16 h-16 mx-auto" />,
-      tech: ["Nuxt.js", "TypeScript", "Bootstrap"],
+      image: "https://i.postimg.cc/MKn28NjN/Whats-App-Image-2026-02-09-at-5-20-41-AM.jpg", // Replace with actual project image
+      tech: ["Next.js", "TypeScript", "Tailwind" ,'Shadcn'],
       liveUrl: "",
       githubUrl: "",
+      stats: {
+        value: "100%",
+        label: "Client Satisfaction"
+      }
     },
   ];
 
@@ -93,15 +109,32 @@ const Projects = ({ isDarkTheme }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
+              whileHover={{ y: -5, scale: 1.02 }}
               className={`rounded-2xl border shadow-2xl backdrop-blur-sm transition-all duration-300 overflow-hidden ${
                 isDarkTheme
                   ? "bg-gradient-to-br from-gray-800/90 to-gray-900/90 border-yellow-500/30 shadow-yellow-500/10"
                   : "bg-gradient-to-br from-white/90 to-gray-50/90 border-gray-200 shadow-gray-200/50"
               }`}
             >
-              <div className="p-6 h-full flex flex-col">
-                <div className="flex justify-center mb-4">{project.image}</div>
+              {/* Project Image */}
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.target.src = `https://picsum.photos/seed/${project.title}/400/250.jpg`;
+                  }}
+                />
+                <div className={`absolute inset-0 bg-gradient-to-t ${
+                  isDarkTheme ? 'from-gray-900/80' : 'from-gray-900/60'
+                } to-transparent`}></div>
+                
+                {/* Stats Badge */}
+              
+              </div>
+
+              <div className="p-6">
                 <h3
                   className={`text-xl font-semibold mb-3 ${
                     isDarkTheme ? "text-white" : "text-gray-900"
@@ -110,7 +143,7 @@ const Projects = ({ isDarkTheme }) => {
                   {project.title}
                 </h3>
                 <p
-                  className={`mb-4 text-sm ${
+                  className={`mb-4 text-sm line-clamp-3 ${
                     isDarkTheme ? "text-gray-300" : "text-gray-600"
                   }`}
                 >
@@ -130,63 +163,61 @@ const Projects = ({ isDarkTheme }) => {
                     </span>
                   ))}
                 </div>
-                <div className="mt-auto pt-4">
-                  <div className="flex gap-3">
-                    {project.liveUrl || project.githubUrl ? (
-                      <motion.a
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        href={project.liveUrl || project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex-1 py-2 px-4 rounded-lg font-medium text-center transition-all duration-300 ${
-                          isDarkTheme
-                            ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black hover:from-yellow-600 hover:to-amber-700"
-                            : "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700"
-                        }`}
-                      >
-                        <ExternalLink className="w-4 h-4 inline mr-2" />
-                        {project.liveUrl ? "Live Demo" : "View Code"}
-                      </motion.a>
-                    ) : (
-                      <span
-                        className={`flex-1 py-2 px-4 rounded-lg font-medium text-center ${
-                          isDarkTheme
-                            ? "bg-gray-700 text-gray-300"
-                            : "bg-gray-200 text-gray-500"
-                        }`}
-                      >
-                        <ExternalLink className="w-4 h-4 inline mr-2" />
-                        Private
-                      </span>
-                    )}
-                    {project.githubUrl ? (
-                      <motion.a
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`inline-flex items-center px-4 py-2 rounded-lg transition-colors ${
-                          isDarkTheme
-                            ? "text-white hover:bg-gray-700"
-                            : "text-gray-700 hover:bg-gray-100"
-                        }`}
-                      >
-                        <Github className="w-5 h-5 mr-2" />
-                        Code
-                      </motion.a>
-                    ) : (
-                      <span
-                        className={`inline-flex items-center px-4 py-2 rounded-lg ${
-                          isDarkTheme ? "text-gray-400" : "text-gray-500"
-                        }`}
-                      >
-                        <Github className="w-5 h-5 mr-2" />
-                        private
-                      </span>
-                    )}
-                  </div>
+                <div className="flex gap-3">
+                  {project.liveUrl || project.githubUrl ? (
+                    <motion.a
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      href={project.liveUrl || project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex-1 py-2 px-4 rounded-lg font-medium text-center transition-all duration-300 ${
+                        isDarkTheme
+                          ? "bg-gradient-to-r from-yellow-500 to-amber-600 text-black hover:from-yellow-600 hover:to-amber-700"
+                          : "bg-gradient-to-r from-blue-500 to-purple-600 text-white hover:from-blue-600 hover:to-purple-700"
+                      }`}
+                    >
+                      <ExternalLink className="w-4 h-4 inline mr-2" />
+                      {project.liveUrl ? "Live Demo" : "View Code"}
+                    </motion.a>
+                  ) : (
+                    <span
+                      className={`flex-1 py-2 px-4 rounded-lg font-medium text-center ${
+                        isDarkTheme
+                          ? "bg-gray-700 text-gray-300"
+                          : "bg-gray-200 text-gray-500"
+                      }`}
+                    >
+                      <ExternalLink className="w-4 h-4 inline mr-2" />
+                      Private
+                    </span>
+                  )}
+                  {project.githubUrl ? (
+                    <motion.a
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`inline-flex items-center px-4 py-2 rounded-lg transition-colors ${
+                        isDarkTheme
+                          ? "text-white hover:bg-gray-700"
+                          : "text-gray-700 hover:bg-gray-100"
+                      }`}
+                    >
+                      <Github className="w-5 h-5 mr-2" />
+                      Code
+                    </motion.a>
+                  ) : (
+                    <span
+                      className={`inline-flex items-center px-4 py-2 rounded-lg ${
+                        isDarkTheme ? "text-gray-400" : "text-gray-500"
+                      }`}
+                    >
+                      <Github className="w-5 h-5 mr-2" />
+                      private
+                    </span>
+                  )}
                 </div>
               </div>
             </motion.div>
